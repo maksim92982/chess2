@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Основные SEO-теги -->
+    <title>Детские шахматные турниры в Санкт-Петербурге 2025 | Расписание и регистрация</title>
+    <meta name="description" content="Полное расписание детских шахматных турниров в СПб на 2025 год. Даты, места проведения, возрастные группы и условия участия. Регистрируйтесь онлайн!">
+    <meta name="keywords" content="шахматы для детей, турниры по шахматам СПб, шахматные соревнования 2025, детские шахматы Санкт-Петербург">
+    
+    <!-- OpenGraph для соцсетей -->
+    <meta property="og:title" content="Детские шахматные турниры в Санкт-Петербурге">
+    <meta property="og:description" content="Актуальное расписание турниров по шахматам для детей в СПб">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chess-chess.vercel.app/">
+    <meta property="og:image" content="https://chess-chess.vercel.app/logo.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Каноническая ссылка -->
+    <link rel="canonical" href="https://chess-chess.vercel.app/">
+    
+    <!-- Schema.org разметка -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Детские шахматные турниры СПб",
+      "url": "https://chess-chess.vercel.app/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://chess-chess.vercel.app/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            /* Остальные стили остаются без изменений */
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        .intro {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tournament-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tournament-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .tournament-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 1rem;
+        }
+        
+        .card-header h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .tournament-info {
+            margin-bottom: 1rem;
+        }
+        
+        .tournament-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        .month-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .month-btn {
+            background-color: white;
+            border: 1px solid var(--secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .month-btn.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .month-btn:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .no-tournaments {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            grid-column: 1 / -1;
+        }
+        
+        @media (max-width: 768px) {
+            .tournament-list {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Детские шахматные турниры</h1>
+            <p class="subtitle">Санкт-Петербург | Информация о турнирах для детей</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="intro">
+            <h2>Добро пожаловать на наш шахматный портал!</h2>
+            <p>Здесь вы найдете актуальную информацию о детских шахматных турнирах в Санкт-Петербурге. Мы собираем данные со всех клубов и организаторов, чтобы вам было удобно планировать участие в соревнованиях.</p>
+        </div>
+        
+        <div class="month-filter">
+            <button class="month-btn active" data-month="all">Все турниры</button>
+            <button class="month-btn" data-month="7">Июль</button>
+            <button class="month-btn" data-month="8">Август</button>
+            <button class="month-btn" data-month="9">Сентябрь</button>
+        </div>
+        
+        <div class="tournament-list" id="tournamentContainer">
+            <!-- Турниры будут добавляться через JavaScript -->
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Детские шахматные турниры СПб | Информация обновляется по мере публикации</p>
+    </footer>
+
+    <script>
+        // Данные о турнирах
+        const tournaments = [
+            {
+                id: 1,
+                name: "Шах и Мат",
+                location: "Светлановский",
+                date: "4 июля",
+                format: "Рапид 9 туров, 10+3",
+                groups: [
+                    "Группа А - 2016 г.р. и младше, рейтинг до 1200",
+                    "Группа Б - 2013 г.р. и младше, рейтинг до 1400"
+                ],
+                fee: "1600₽",
+                link: "https://vk.com/wall-199387001_1637",
+                month: 7
+            },
+            {
+                id: 2,
+                name: "ШК Сестрорецк",
+                location: "Сестрорецк",
+                date: "5 июля",
+                format: "Рапид 7 туров, 10+5",
+                groups: [
+                    "Группа «А»: Участники: 2015 гр и старше, рейтинг до 1800",
+                    "Группа «В»: Участники: 2016 гр и моложе без ограничения рейтинга"
+                ],
+                fee: "1700₽",
+                link: "https://vk.com/wall-119860869_9711",
+                month: 7
+            },
+            {
+                id: 3,
+                name: "ШК Сестрорецк",
+                location: "Сестрорецк",
+                date: "20 июля",
+                format: "Рапид 7 туров, 10+5",
+                groups: [
+                    "Участники 2010 г.р. и младше"
+                ],
+                fee: "1700₽",
+                link: "https://vk.com/wall-119860869_9720",
+                month: 7
+            },
+            {
+                id: 4,
+                name: "На петроградской стороне",
+                location: "Петроградская сторона",
+                date: "21-25, 28-31 июля",
+                format: "Классика 9 туров (90+30)",
+                groups: [
+                    "Турнир без ограничений возраста и рейтинга"
+                ],
+                fee: "от 3500₽",
+                link: "http://totalchess.org/leto-na-petrogradskoj-storone-2025.html",
+                month: 7
+            },
+            {
+                id: 5,
+                name: "Охта парк Chess",
+                location: "Охта парк",
+                date: "27-29 июля",
+                format: "Рапид 7 туров (10+5) / Классика / Блиц",
+                groups: [
+                    "Рапид: взнос 1900₽",
+                    "Классика (В1,В2 7 туров (60+30), В3,В4 7 туров (30+30)): взнос 3500₽",
+                    "Блиц 11 туров (3+2): взнос 1500₽",
+                    "Разные категории по рейтингу и возрасту"
+                ],
+                fee: "от 1500₽",
+                link: "https://vk.com/wall-157175360_2500",
+                month: 7
+            },
+            {
+                id: 6,
+                name: "T-Chess",
+                location: "",
+                date: "26-29 июля",
+                format: "Классика и Рапид",
+                groups: [
+                    "Классика 7 туров (90+30)",
+                    "К1-OPEN без ограничений по возрасту и рейтингу",
+                    "К2 - 2015 года и младше",
+                    "К3 - девочки 2015 года и младше",
+                    "К4 - 2017 год рождения и младше",
+                    "К5 - девочки 2017 года и мл",
+                    "Рапид 7 туров (10+5)",
+                    "Р1 - OPEN без ограничений по возрасту и рейтингу",
+                    "Р2 - до 1250 пунктов, без ограничений по возрасту"
+                ],
+                fee: "",
+                link: "https://vk.com/wall-80045880_5078",
+                month: 7
+            },
+            {
+                id: 7,
+                name: "GoodChess",
+                location: "Ул.Достоевского",
+                date: "6 июля",
+                format: "Рапид и Блиц",
+                groups: [
+                    "Рапид: участники дети 0-1300",
+                    "Блиц: без ограничений"
+                ],
+                fee: "2000₽ (Рапид), 1000₽ (Блиц)",
+                link: "https://vk.com/wall-165232463_2390",
+                month: 7
+            },
+            {
+                id: 8,
+                name: "ChessChamp",
+                location: "пл.Мужества",
+                date: "13 июля",
+                format: "Рапид 9 туров (10+5)",
+                groups: [
+                    "до 1700",
+                    "до 1300 пунктов рейтинга"
+                ],
+                fee: "1500₽",
+                link: "https://vk.com/wall-221087744_3102",
+                month: 7
+            },
+            {
+                id: 9,
+                name: "ChessChamp",
+                location: "пл.Мужества",
+                date: "27 июля",
+                format: "Рапид 9 туров (10+5)",
+                groups: [
+                    "до 2000",
+                    "до 1500 пунктов рейтинга"
+                ],
+                fee: "1500₽",
+                link: "https://vk.com/wall-221087744_3102",
+                month: 7
+            }
+        ];
+
+        // Функция для отображения турниров
+        function displayTournaments(month = 'all') {
+            const container = document.getElementById('tournamentContainer');
+            container.innerHTML = '';
+            
+            let filteredTournaments = tournaments;
+            if (month !== 'all') {
+                filteredTournaments = tournaments.filter(t => t.month === parseInt(month));
+            }
+            
+            if (filteredTournaments.length === 0) {
+                container.innerHTML = '<div class="no-tournaments"><p>На выбранный месяц турниров пока нет. Проверьте позже!</p></div>';
+                return;
+            }
+            
+            filteredTournaments.forEach(tournament => {
+                const card = document.createElement('div');
+                card.className = 'tournament-card';
+                
+                let groupsHTML = '';
+                tournament.groups.forEach(group => {
+                    groupsHTML += `<p>• ${group}</p>`;
+                });
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h3>${tournament.name}</h3>
+                        <p>${tournament.location}</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="tournament-info">
+                            <p><span class="info-label">Дата:</span> ${tournament.date}</p>
+                            <p><span class="info-label">Формат:</span> ${tournament.format}</p>
+                            <p><span class="info-label">Группы:</span></p>
+                            ${groupsHTML}
+                            <p><span class="info-label">Взнос:</span> ${tournament.fee || 'Уточняйте в положении'}</p>
+                        </div>
+                        <a href="${tournament.link}" target="_blank" class="btn">Подробнее</a>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+        
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            displayTournaments();
+            
+            // Обработчики для кнопок фильтрации
+            const monthButtons = document.querySelectorAll('.month-btn');
+            monthButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    monthButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    displayTournaments(button.dataset.month);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
